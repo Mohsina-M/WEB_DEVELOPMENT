@@ -1,0 +1,160 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Job Board</title>
+    <style>
+      /* Add your CSS styles here */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        background-image: url("background2.jpg");
+      }
+  
+      header img {
+        max-height: 50px; /* Adjust the height as needed */
+        margin-right: 20px;
+      }
+  
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+  
+      nav ul li {
+        margin-left: 15px;
+      }
+  
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+  
+      .container {
+        display: flex;
+      }
+  
+      .small-column {
+        flex: 1;
+        padding: 20px;
+        background-color: #f2f2f2;
+      }
+  
+      #search-bar {
+        margin-bottom: 20px;
+      }
+  
+      #search-input {
+        padding: 8px;
+        width: 60%;
+        margin-right: 10px;
+      }
+  
+      #search-input:focus {
+        outline: none;
+      }
+  
+      #search-input::placeholder {
+        color: #999;
+      }
+  
+      button {
+        padding: 8px 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+      }
+  
+      button:hover {
+        background-color: #0056b3;
+      }
+  
+      .big-column {
+        flex: 2;
+        padding: 20px;
+        background-color: #fff;
+      }
+  
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        background-image: url("background2.jpg"); /* Replace "your-background-image.jpg" with your actual image file */
+        background-size: cover;
+        background-position: center;
+      }
+  
+      .jobemoji nav {
+        display: flex;
+        align-items: center;
+      }
+  
+      .jobemoji img {
+        max-height: 100px; /* Adjust the height as needed */
+        margin-right: 20px;
+      }
+  
+      .jobemoji h1 {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="M.png" alt="Your Logo">
+      <nav>
+        <ul>
+          <li><a id="loginButton" href="#">LOGIN</a></li>
+          <li><a id="logoutButton" href="#">LOGOUT</a></li>
+          <li><a id="registerButton" href="#">REGISTER</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <main>
+      <div class="container">
+        <div class="small-column">
+          <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search for items...">
+            <button type="button" onclick="searchItems()">Search</button>
+          </div>
+          <aside class="sidebar">
+            <div class="advertisement">
+              <img src="jobadd.jpg" alt="Advertisement 1">
+              <img src="jobadd1.jpg" alt="Advertisement 2">
+              <img src="jobadd2.jpg" alt="Advertisement 3">
+            </div>
+          </aside>
+          <p>more advertisements......</p>
+        </div>
+        <div class="big-column" id="jobListings">
+          <div class="jobemoji">
+            <nav>
+              <img src="jobf.jpg" alt="Advertisement 1">
+              <h1>JOB BOARD FOR FRESHERS</h1>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </main>
+  
+    <footer>
+      <center><p>@ Mohsina Mahammed</p></center>
+      <center><p>&copy; 2023 Job Board. All Rights Reserved.</p></center>
+      <!-- Your footer content here -->
+    </footer>
+  
+    <script src="script.js"></script>
+  </body>
+  </html>
+  

@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Developer Portfolio</title>
+    <style>
+       
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change font style */
+            border-color: #78ade5;
+        }
+
+        body {
+            line-height: 1.6;
+            background-image: url("background2.jpg");
+            background-size:cover;
+            color: black; /* Change text color to black */
+            border-color: #78ade5;
+        
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #0f0e0e;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            background-image: url('background2.jpg');
+            background-size: cover;
+            border-color: #111212;
+            box-shadow: inset;
+        }
+
+        header .logo img {
+            width: 200px; /* Fit the logo image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 70%;
+            margin-right: 20px;
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin-bottom: 10px; /* Add margin for separation */
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px; /* Adjust margin */
+        }
+
+        .header-buttons a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #007bff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            margin: 0 5px; /* Adjust margin */
+            transition: background-color 0.3s ease;
+        }
+
+        .header-buttons a:hover {
+            background-color: #78ade5;
+        }
+
+        /* Main Content Styles */
+        .container {
+            padding: 20px;
+        }
+
+        section {
+            margin-top: 20px;
+            text-align: center; /* Center align section content */
+        }
+
+        section h2 {
+            margin-bottom: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .contact-form {
+            padding: auto;
+            
+        }
+        /* New styles for three-column projects section */
+        .projects-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Adjust the gap between columns */
+        }
+
+        .projects-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Adjust the gap between columns */
+        }
+
+        .project {
+            width: calc(33.33% - 20px); /* Set the width for each column */
+            background-color: #f9f9f9; /* Example background color */
+            padding: 15px; /* Example padding */
+            border-radius: 8px; /* Example border radius */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Example box shadow */
+        }
+
+        .project h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333; /* Example text color */
+        }
+
+        .project p {
+            font-size: 14px;
+            color: #555; /* Example text color */
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .bar {
+            width: calc(33.33% - 20px); /* Set the width for each column */
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease; /* Adding a transition effect */
+        }
+
+        .bar:hover {
+            transform: translateY(-5px); /* Lift the bar slightly on hover */
+        }
+
+        .info {
+            margin-bottom: 5px;
+            font-weight: bold; /* Make skill names bold */
+        }
+
+        .progress-line {
+            background-color: #ddd;
+            height: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-line span {
+            display: block;
+            height: 100%;
+            background-color: #347cca;
+            border-radius: 5px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Adjust width for each skill */
+        .html span { width: 80%; }
+        .css span { width: 75%; }
+        .javascript span { width: 85%; }
+        .python span { width: 70%; }
+        .sql span { width: 80%; }
+
+        /* Updated styles for Footer */
+        footer {
+            color: #151515;
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #333; /* Updated background color */
+            background-image: url("background2.jpg");
+            background-size:cover;
+        }
+
+        footer h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            
+        }
+
+        .follow-us {
+            margin-top: 20px;
+            
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        /* Additional styling for social icons */
+        .social-icons a img:hover {
+            opacity: 0.7;
+            
+        }
+
+       
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo1.jpg" alt="Logo">
+        </div>
+        <div class="header-buttons">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT ME</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#projects">PROJECTS</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="home">
+                <center>
+                    <br><h2>HI I'M MOHSINA MAHAMMED </h2></br>
+                    <h2>Welcome to My Portfolio</h2>
+                    <p>I'm a passionate software developer specializing in creating robust and efficient applications.</p>
+                    <br><a href="resume.pdf" download class="btn">Download Resume</a>
+                </center>
+            </section>
+            <section id="about">
+                <h2>ABOUT ME</h2>
+                <p>I am dedicated to crafting high-quality software solutions, leveraging my skills in various programming languages and technologies.</p>
+                <br><h2>MY SKILLS</h2></section></br>
+            </section>
+            <div>
+            <section class="skills" id="skills">
+                <div class="skills">
+                    <div class="bar">
+                        <div class="info">
+                            <span>HTML</span>
+                        </div>
+                        <div class="progress-line">
+                            <span class="html" style="width: 80%"></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <span>CSS</span>
+                        </div>
+                        <div class="progress-line">
+                            <span class="css" style="width: 75%"></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="progress-line">
+                            <span class="javascript" style="width: 85%"></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <span>Python</span>
+                        </div>
+                        <div class="progress-line">
+                            <span class="python" style="width: 70%"></span>
+                        </div>
+                    </div>
+                    <div class="bar">
+                        <div class="info">
+                            <span>SQL</span>
+                        </div>
+                        <div class="progress-line">
+                            <span class="sql" style="width: 80%"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+            <section id="projects">
+                
+                <div class="projects-container">
+                    <h2>PROJECTS</h2>
+                    <div class="project">
+                        <h3>Disease Predictor BOT</h3>
+                        <p>The main aim of the project is to identify health problems early, so doctors can help patients sooner and improve their quality of life. We start by asking questions about symptoms and medical history in a special interview. Then, we use machine learning techniques to examine the person physically. Finally, the project predicts the health issue to make healthcare prediction easier.</p>
+                    </div>
+                    <div class="project">
+                        <h3>A New Galactic Swarm Optimization Algorithm Enhanced with Grey wolf optimizer for training for Artificial Neural Network</h3>
+                        <p>My research paper focuses on an innovative approach that combines the Galactic Swarm Optimization (GSO) algorithm with the Grey Wolf Optimizer (GWO) to enhance its performance. The proposed algorithm is employed in training a feed-forward Neural Network (FNN) and is evaluated through its ability to train an FNN for function approximation of benchmark function on optimization problems, to minimize the Mean Squared Error (MSE) between the targeted input and the desired output.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Inventory Stock Management System for Grocery Store</h3>
+                        <p>This system empowered users to seamlessly manage fruit and vegetable inventory through features such as adding, editing, deleting, and updating items. Additionally, I implemented bill generation functionality, enabling easy and accurate bill printing. The system's ability to dynamically calculate the total bill based on customers on their purchases.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="contact-form">
+                <h2>CONTACT ME</h2>
+                <div class="container">
+                    <form>
+                        <b>
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Enter First Name">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Enter Last Name">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" name="email" placeholder="abc@xyz.com">
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something" style="height:150px"></textarea>
+                        <input type="submit" value="Submit">
+                    </b>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <section id="aboutUs">
+            <h2>About Us</h2>
+            <p>We specialize in providing cutting-edge software solutions tailored to meet our clients' needs.</p>
+        </section>
+        <section id="ContactUs">
+            <h2>Contact Us</h2>
+            <p>To reach our customer service team, please email us at: customerservice@example.com</p>
+        </section>
+        <div class="follow-us">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/" target="_self">
+                    <img src="instagram.jpeg" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/your_linkedin_profile" target="_self">
+                    <img src="fb.jpeg" alt="LinkedIn">
+            </div>
+        </div>
+    </footer>
+</body>
+<CENTER><h3>Created By @MOHSINA</h3></CENTER>
+
+</html>

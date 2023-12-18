@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Modern E-Book Store Landing Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <style>
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f8f8f8;
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header styles */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f8f8f8;
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-style: bold;
+      font-size: medium;
+    }
+
+    #header-img {
+      width: 80px; 
+      height: auto;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    #nav-bar {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .nav-link {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Main styles */
+    main {
+      padding: 20px;
+    }
+
+    /* Section styles */
+    section {
+      margin-bottom: 40px;
+    }
+
+    .section-heading {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .sec-content-div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    /* Tile styles */
+    .tile, .featured-book {
+      width: calc(25% - 40px); /* Adjust tile width */
+      padding: 20px;
+      background-color: #f8f8f8;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .tile img, .featured-book img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    /* Form styles */
+    #form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    input[type="email"] {
+      width: 300px;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    #submit {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    h2{
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* Featured book styles */
+    .featured-books {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .featured-book {
+      width: calc(25% - 40px); /* Adjust tile width */
+      padding: 20px;
+      background-color: #f8f8f8;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .featured-book img {
+      max-width: 100%;
+      height: 200px; /* Adjust image height */
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .featured-book h4 {
+      margin-bottom: 10px;
+    }
+
+    .featured-book p {
+      text-align: left;
+    }
+
+
+    /* Footer styles */
+    footer {
+      background-color: #f8f8f8;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="header-content-div">
+      <a href="#home-sec">
+        <img
+          src="logo.jpg"
+          alt="Book Store Logo"
+          id="header-img"/>
+      </a>
+      <nav id="nav-bar">
+        <a href="#about" class="nav-link"> ABOUT</a>
+        <a href="#categories" class="nav-link">CATEGORIES</a>
+        <a href="#featured-books" class="nav-link">FEATURED BOOKS</a>
+        <a href="#contact" class="nav-link">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="home-sec" class="flexible home-sec" style="display: flex; justify-content: center; align-items: center;">
+      <div class="eye-grabber-img">
+        <img src="best selling books.jpg" alt="Image of Books" style="float: left;" />
+      </div>
+      <div class="eye-grabber">
+        <br><br><br><br><br><br><br><br>
+        <h2>"Books are keys that unlock doors to new worlds, adventures, and knowledge, enriching lives one page at a time. They're not merely stories but journeys inviting us to explore, imagine, and grow. With each book, we embrace the wisdom of ages, finding solace, inspiration, and endless possibilities within their pages. A book isn't just a purchase; it's an investment in boundless experiences and enlightenment."</h2>
+        <h2>"Immerse yourself in a world of literary wonders, from timeless classics to thrilling bestsellers."</h2>
+      </br>
+    </div>
+    </section>
+    <section id="about" class="sec-padding">
+      <h3 class="section-heading">ABOUT US</h3>
+      <div class="sec-content-div flexible">
+        <h4>
+          "our dedicated team is committed to providing an unparalleled reading experience. We meticulously curate our collection to offer a diverse range of best-selling novels, timeless classics, thought-provoking non-fiction, and captivating tales for every reader. Our mission is to connect you with the finest literary works, ensuring your journey through the pages is nothing short of extraordinary."
+        </h4>
+      </div>
+    </section>
+    <section id="categories" class="sec-padding">
+      <h3 class="section-heading">CATEGORIES</h3>
+      <div class="sec-content-div flexible">
+        <div class="tile">
+          <img src="fiction.jpg" alt="photo of Fiction Books" />
+          <h4>Fiction</h4>
+          <p>Explore captivating stories and imaginative narratives.</p>
+        </div>
+        <div class="tile">
+          <img src="img.jpg" alt="photo of Non-Fiction Books"/>
+          <h4>Non-Fiction</h4>
+          <p>Find books based on real-life events, biographies, and informative content.</p>
+        </div>
+        <div class="tile">
+          <img src="R.jpg" alt="photo of Romance Books" />
+          <h4>Romance</h4>
+          <p>Experience love and passion through heartwarming stories.</p>
+        </div>
+        <div class="tile">
+          <img src="mystery.jpg" alt="photo of Mystery Books" />
+          <h4>Mystery</h4>
+          <p>Unravel thrilling puzzles and suspenseful plots.</p>
+        </div>
+      </div>
+    </section>
+    <section id="featured-books" class="sec-padding">
+      <h3 class="section-heading">FEATURED BOOKS</h3>
+      <div class="sec-content-div flexible featured-books">
+        <div class="featured-book">
+          <img src="book2.jpg" alt="Featured Book 2" />
+          <h4>"To Kill a Mockingbird"</h4>
+          <h4>Author: Harper Lee</h4>
+          <p>Harper Lee's Pulitzer Prize-winning novel explores racial injustice and moral growth in the American South. Set in the 1930s, it follows the trial of a black man accused of raping a white woman, seen through the eyes of a young girl named Scout Finch.</p>
+        </div>
+        <div class="featured-book">
+          <img src="book12.jpg" alt="Featured Book 1" />
+          <h4>"Hamlet"</h4>
+          <h4>Author: William Shakespeare</h4>
+          <p>Hamlet, a seminal tragedy by Shakespeare, explores existentialism, morality, and human complexity. Prince Hamlet, mourning his father's death, confronts despair and suspicion after discovering his murder by his uncle Claudius, triggering a quest for revenge.</p>
+        </div>
+        <div class="featured-book">
+          <img src="book3.jpg" alt="Featured Book 3" />
+          <h4>"The Catcher in the Rye"</h4>
+          <h4>Author: J.D. Salinger</h4>
+          <p>The Catcher in the Rye narrates the story of Holden Caulfield, a disillusioned teenager navigating the complexities of adolescence and society. The book is renowned for its candid portrayal of teenage angst and alienation.</p>
+        </div>
+        <div class="featured-book">
+          <img src="book4.jpg" alt="Featured Book 4" />
+          <h4>"The Great Gatsby"</h4>
+          <h4>Author: F. Scott Fitzgerald</h4>
+          <p>F. Scott Fitzgerald's classic novel set in the Roaring Twenties explores themes of the American Dream, love, and the corrupting influence of wealth through the enigmatic Jay Gatsby and his pursuit of love and wealth.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact" class="sec-padding">
+      <h3 class="section-heading">CONTACT</h3>
+      <div class="sec-content-div flexible">
+    <p>Email: moh@bookstore.com</p>
+    <p>Phone: +123456789</p>
+    <p>Address: 123 Book Street, City, INDIA</p>
+        <form id="form" method="POST">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your Email Address"
+            required
+          />
+          <input type="submit" class="btn" id="submit" value="Get in Touch" />
+        </form>
+      </div>
+    </section>
+    
+  </main>
+  <footer>
+    Created by
+    <a href="#"> @ Mohsina</a>
+  </footer>
+</body>
+</html>

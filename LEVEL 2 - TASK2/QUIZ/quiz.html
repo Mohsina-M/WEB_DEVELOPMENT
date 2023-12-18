@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Development Quiz</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            background-image: url("quiz.jpeg");
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #question {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .options button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .options button:hover {
+            background-color: #f0f0f0;
+        }
+
+        #next-button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #next-button:hover {
+            background-color: #0056b3;
+        }
+
+        .timer {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .progress {
+            margin-top: 20px;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: #007bff;
+            transition: width 0.5s ease-in-out;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>Web Development Quiz</h1>
+        <div id="question"></div>
+        <div id="options" class="options"></div>
+        <div class="timer">Time Left: <span id="timer">60</span> seconds</div>
+        <div class="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <button id="next-button" disabled>Next</button>
+        <div id="result"></div>
+    </div>
+    <footer>
+        <p>Created By @Mohsina</p>
+    </footer>
+
+    <script>
+        // JavaScript code
+        const questions = [
+    {
+        question: 'What does HTML stand for?',
+        options: ['Hyper Text Markup Language', 'Home Tool Markup Language', 'Hyperlinks and Text Markup Language', 'Hyper Text Makeup Language'],
+        answer: 'Hyper Text Markup Language'
+    },
+    {
+        question: 'What does CSS stand for?',
+        options: ['Computer Style Sheets', 'Cascading Style Sheets', 'Creative Style Sheets', 'Colorful Style Sheets'],
+        answer: 'Cascading Style Sheets'
+    },
+    {
+        question: 'What is the purpose of JavaScript?',
+        options: ['To style web pages', 'To create dynamic web content', 'To define web page structure', 'To manage databases'],
+        answer: 'To create dynamic web content'
+    },
+    {
+        question: 'What is the latest version of HTML?',
+        options: ['HTML4', 'HTML5', 'XHTML', 'XML'],
+        answer: 'HTML5'
+    },
+    {
+        question: 'Which tag is used for creating an unordered list in HTML?',
+        options: ['<ul>', '<ol>', '<li>', '<dl>'],
+        answer: '<ul>'
+    },
+    {
+        question: 'What is the CSS property used for changing the font size of text?',
+        options: ['font-weight', 'text-style', 'font-size', 'text-size'],
+        answer: 'font-size'
+    },
+    {
+        question: 'Which attribute is used in HTML to link an external CSS file?',
+        options: ['style', 'link', 'href', 'src'],
+        answer: 'href'
+    },
+    {
+        question: 'What is the purpose of the "console.log" in JavaScript?',
+        options: ['To print output to the console', 'To perform mathematical operations', 'To create a new element', 'To apply styles to elements'],
+        answer: 'To print output to the console'
+    },
+    // Add more questions...
+];
+
+
+        let currentQuestion = 0;
+        let score = 0;
+        let timeLeft = 60; // Timer set to 60 seconds
+
+        const questionElement = document.getElementById('question');
+        const optionsElement = document.getElementById('options');
+        const nextButton = document.getElementById('next-button');
+        const resultElement = document.getElementById('result');
+        const timerElement = document.getElementById('timer');
+
+        let timerInterval;
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerElement.textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    timeLeft = 0;
+                    showResult();
+                }
+            }, 1000);
+        }
+
+        function displayQuestion() {
+            const q = questions[currentQuestion];
+            questionElement.textContent = q.question;
+
+            optionsElement.innerHTML = '';
+            for (let i = 0; i < q.options.length; i++) {
+                const option = document.createElement('button');
+                option.textContent = q.options[i];
+                option.addEventListener('click', checkAnswer);
+                optionsElement.appendChild(option);
+            }
+
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+        }
+
+        function checkAnswer(event) {
+            const selectedOption = event.target.textContent;
+            const correctAnswer = questions[currentQuestion].answer;
+            const feedbackElement = document.getElementById('result');
+
+            if (selectedOption === correctAnswer) {
+                feedbackElement.textContent = 'Correct!';
+                score++;
+            } else {
+                feedbackElement.textContent = 'Incorrect. The correct answer is: ' + correctAnswer;
+            }
+
+            for (const option of optionsElement.children) {
+                option.removeEventListener('click', checkAnswer);
+            }
+
+            if (currentQuestion === questions.length - 1) {
+                showResult();
+            } else {
+                currentQuestion++;
+                nextButton.disabled = true;
+                setTimeout(() => {
+                    feedbackElement.textContent = '';
+                    nextButton.disabled = false;
+                    displayQuestion();
+                }, 1500);
+            }
+        }
+
+        function showResult() {
+            questionElement.textContent = '';
+            optionsElement.innerHTML = '';
+            nextButton.style.display = 'none';
+            resultElement.textContent = `You scored ${score} out of ${questions.length}`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            if (currentQuestion < questions.length) {
+                displayQuestion();
+            }
+            
+        });
+
+        startTimer();
+        displayQuestion();
+    </script>
+</body>
+
+</html>
